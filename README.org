@@ -1,0 +1,728 @@
+* FISHERKING CLASS: COMPLETE IMPLEMENTATION GUIDE (BG3 Adaptation v1.0)
+
+** Base Class Specifications
+- *Hit Die*: d8
+- *Primary Ability Score*: Charisma
+- *Saving Throw Proficiencies*: Constitution, Wisdom
+- *Armor Proficiencies*: Light armor, shields
+- *Weapon Proficiencies*: All simple weapons
+- *Skills*: Choose 2 from Deception, Arcana, History, Intimidation, Perception, Persuasion, Religion, Insight, and Animal Handling
+- *Hit Points at 1st Level*: 8 + Constitution modifier
+- *Hit Points at Higher Levels*: 1d8 (or 5) + Constitution modifier per Fisherking level after 1st
+
+** Ability Score Priorities
+1. *Charisma* (Primary): Powers veil/hex DCs, Blessed Land, some features
+2. *Constitution*: Survivability and Concentration checks
+3. *Dexterity*: AC bonus with light armor
+4. *Intelligence*: Skill bonuses
+5. *Wisdom*: Perception and save proficiency
+6. *Strength*: Lowest priority
+
+** Starting Equipment (BG3 Preset Example)
+- Leather armor
+- A simple shortsword
+- Component pouch (or Shield as focus)
+- Explorer's pack or Scholar's pack
+
+** CORE MECHANIC: VEILWEAVING
+Veilweaving is the process of shaping magical constructs (veils) from akashic energy.
+
+*** Veils
+- *Preparation*: Veils are shaped during a long rest. The Fisherking can choose which veils to shape each day from the list available to them. Previously shaped veils should be remembered as the default loadout to streamline preparation.
+- *Slots*: Each veil occupies a specific body slot (hands, feet, head, wrists, shoulders, headband, neck, belt, chest, body, or the unique voice slot).
+- *Limitation*: Only one veil per slot can be actively shaped at a time (except the Voice slot with the Twin Voice feature).
+- *Suppression*: Veils are magical effects and are suppressed in an antimagic field.
+- *Base Function*: Veils provide their base effects even with 0 essence invested, unless specified otherwise.
+- *Conceptual Framework*: Think of veils as flexible "magical equipment" created or swapped after each long rest.
+
+*** Maximum Veils Shaped Per Level
+| Level | Maximum Veils |
+|-------|---------------|
+| 1     | 1             |
+| 2-4   | 2             |
+| 5-7   | 3             |
+| 8-10  | 4             |
+| 11-13 | 5             |
+| 14-16 | 6             |
+| 17-19 | 7             |
+| 20    | 8             |
+
+Veils can be chakra bound to a slot, which increases their effects. There is more slots than maximum veils at max level - you cant cover everything.
+
+*** Veil Save DC
+The saving throw DC for effects caused by your veils is calculated as:
+*Veil Save DC = 8 + Proficiency Bonus + Charisma Modifier*
+
+** CORE MECHANIC: ESSENCE
+Essence is the mystical energy fueling veils and enhancing their abilities.
+
+*** Essence Pool
+| Level | Essence Pool |
+|-------|--------------|
+| 1     | 1            | | 11    | 11           |
+| 2     | 2            | | 12    | 12           |
+| 3     | 3            | | 13    | 13           |
+| 4     | 4            | | 14    | 14           |
+| 5     | 5            | | 15    | 15           |
+| 6     | 6            | | 16    | 16           |
+| 7     | 7            | | 17    | 17           |
+| 8     | 8            | | 18    | 18           |
+| 9     | 9            | | 19    | 19           |
+| 10    | 10           | | 20    | 20           |
+- *Designer Note:* The 1-20 linear Essence Pool provides a large resource pool compared to standard 5e classes. If playtesting reveals balance issues, consider alternatives like 'Level + CHA Modifier' or a progression matching Sorcery Points, and adjust veil essence scaling accordingly.
+
+*** Maximum Essence Per Veil
+The maximum amount of essence from your pool that can be invested into a single veil at any time depends on your Fisherking level:
+| Level   | Max Essence/Veil | | Level   | Max Essence/Veil |
+|---------|------------------| |---------|------------------|
+| 1-3     | 3                | | 10-12   | 7                |
+| 4-5     | 4                | | 13-15   | 8                |
+| 6-7     | 5                | | 16-18   | 9                |
+| 8-9     | 6                | | 19-20   | 10               |
+- *Designer Note:* This custom progression aims for a balance between early impact and high-level potential. If refinement is needed, consider tying it more directly to Proficiency Bonus (e.g., PB + static bonuses at certain levels).
+
+*** Essence Management
+- *Action Type*: You can redistribute the essence invested in your currently shaped veils as a **Bonus Action** on your turn. You can freely move points from one veil to another, up to the maximum allowed per veil and limited by your total essence pool.
+- *Limitation*: Hexes generally do not interact with or consume essence, except for the Peerless Hex feature.
+- *Reset*: Your essence pool fully replenishes after completing a long rest.
+
+** CORE MECHANIC: CHAKRA BINDING
+Binding shaped veils to your body's energy centers (chakras) unlocks potent additional powers.
+
+*** Chakra Unlock Schedule
+| Level | Chakra Unlocked |
+|-------|-----------------|
+| 2     | Hands           |
+| 4     | Feet            |
+| 6     | Head            |
+| 8     | Wrists          |
+| 10    | Shoulders       |
+| 12    | Headband        |
+| 14    | Neck            |
+| 16    | Belt            |
+| 18    | Chest           |
+| 20    | Body            |
+| 9     | Voice (Binding) |
+
+*** Binding Rules
+- *Process*: When you finish a long rest, after shaping your veils, you can choose to bind any number of your shaped veils to their corresponding chakra slots, provided you have unlocked that chakra. A veil must be shaped to the slot it is being bound to (e.g., a Hands slot veil can only be bound to the Hands chakra).
+- *Cost*: There is no resource cost associated with binding.
+- *Limitation*: You can only bind veils to chakras you have unlocked via your class level.
+- *Effect*: A bound veil grants both its base effect (including benefits from invested essence) *and* its listed Chakra Bind effect.
+
+** CLASS FEATURES BY LEVEL TABLE
+| Level | Proficiency Bonus | Features                                                                                    | Max Veils | Essence Pool | Max Essence/Veil |
+|-------+-------------------+---------------------------------------------------------------------------------------------+-----------+--------------+------------------|
+|     1 |                +2 | Veilweaving (1 Veil), Essence, Blessed Land (9m), Royal Attendants                          |         1 |            1 |                3 |
+|     2 |                +2 | Hex (King's Cup), Hex (Basic Choice), Chakra Bind (Hands)                                   |         2 |            2 |                3 |
+|     3 |                +2 | Peerless Hex, Subclass Selection, Hex (Royal Coven)                                         |         2 |            3 |                3 |
+|     4 |                +2 | Ability Score Improvement, Hex (Malefic Sanction), Hex (Basic Choice), Chakra Bind (Feet)   |         2 |            4 |                4 |
+|     5 |                +3 | Blessed Land Improvement (+2/+3m), Hex (Will Incarnate), Royal Attendants (Customization 1) |         3 |            5 |                4 |
+|     6 |                +3 | Subclass Feature, Chakra Bind (Head)                                                        |         3 |            6 |                5 |
+|     7 |                +3 | Regal Presence, Peerless Hex Binding                                                        |         3 |            7 |                5 |
+|     8 |                +3 | Ability Score Improvement, Hex (2 Basic Choices), Chakra Bind (Wrists)                      |         4 |            8 |                6 |
+|     9 |                +4 | Blessed Land (18m Radius), Voice Binding                                                    |         4 |            9 |                6 |
+|    10 |                +4 | Subclass Feature, Chakra Bind (Shoulders)                                                   |         4 |           10 |                7 |
+|    11 |                +4 | Royal Attendants (Heroes' Feast)                                                            |         5 |           11 |                7 |
+|    12 |                +4 | Ability Score Improvement, Hex (Major Choice), Chakra Bind (Headband)                       |         5 |           12 |                7 |
+|    13 |                +5 | Blessed Land Improvement (+3/+4.5m)                                                         |         5 |           13 |                8 |
+|    14 |                +5 | Subclass Feature, Chakra Bind (Neck)                                                        |         6 |           14 |                8 |
+|    15 |                +5 | Twin Voice, Royal Attendants (Customization 2)                                              |         6 |           15 |                8 |
+|    16 |                +5 | Ability Score Improvement, Hex (2 Basic Choices), Chakra Bind (Belt)                        |         6 |           16 |                9 |
+|    17 |                +6 | Blessed Land (27m Radius)                                                                   |         7 |           17 |                9 |
+|    18 |                +6 | Chakra Bind (Chest)                                                                         |         7 |           18 |                9 |
+|    19 |                +6 | Ability Score Improvement                                                                   |         7 |           19 |               10 |
+|    20 |                +6 | Hex (Grand Choice), Chakra Bind (Body)                                                      |         8 |           20 |               10 |
+
+** CLASS FEATURES BY LEVEL (DETAILS)
+
+*** Level 1
+**** Veilweaving & Essence
+You gain the ability to shape magical veils and fuel them with essence, as described in the Core Mechanics sections. You know how to shape veils from the Fisherking veil list (see Veils By Slot). You start knowing one veil slot (Voice) and gain others as you level.
+
+**** Blessed Land (9m Radius)
+- *Preparation*: During a long rest, after shaping veils, choose one of the following effects for your Blessed Land aura: My People Will Flourish or My Enemies Will Suffer. This choice lasts until your next long rest.
+- *Activation*: As a **Bonus Action**, you can activate or deactivate your Blessed Land aura. It emanates in a **9-meter (30 ft)** radius sphere centered on you and lasts until you deactivate it, fall unconscious, or die.
+- *Effect - My People Will Flourish*: Allies (including you) within the aura gain a +1 bonus to one type of saving throw (choose STR, DEX, CON, INT, WIS, or CHA during preparation) and gain +1.5 meters (5 ft) to their movement speed.
+- *Effect - My Enemies Will Suffer*: Enemies within the aura take a -1 penalty to one type of saving throw (choose STR, DEX, CON, INT, WIS, or CHA during preparation) and take a -2 penalty on Strength (Athletics) and Dexterity (Acrobatics) checks. This penalty is doubled for checks made as part of moving through an ally's threatened space.
+- *Essence Investment*: You can invest essence into your Blessed Land aura (counts towards your maximum shaped veils limit for essence investment):
+  - Each point increases the radius by 1.5 meters (5 ft).
+  - Every 2 points increases the save bonus/penalty by 1 and the movement speed bonus/Athletics & Acrobatics penalty by 1.5 meters/1 point.
+
+**** Royal Attendants
+- *Activation*: As a **Free Action**, you can summon or dismiss spectral servants. You summon a number equal to your Charisma modifier (minimum 1).
+- *Abilities*: These visible, translucent attendants resemble members of your lineage or wear livery you design. They have AC 10, 1 hit point, and use your saving throw modifiers if forced to make a save. They can interact with objects, open doors, carry light loads (Strength score 4, increases by +2 per essence invested), and effectively function like the *Unseen Servant* spell, except they are visible. They can also cast the *Minor Illusion* cantrip at will (using your Veil Save DC).
+- *Limitations*: They cannot attack, take the Help action, or activate magic items.
+- *Essence Investment*:
+  - Each point increases the number of attendants you can summon by 1.
+  - Each point increases the Strength score of all attendants by 2.
+
+*** Level 2
+**** Hexes
+You learn your first Hexes. See the Hexes section for mechanics and the lists of available hexes. You gain the **King's Cup** hex automatically and choose **one** hex from the Basic Hex Choices list.
+*Hex Save DC = 8 + Proficiency Bonus + Charisma Modifier*
+
+**** Chakra Bind (Hands)
+You unlock the Hands chakra, allowing you to bind veils shaped to the Hands slot for additional effects.
+
+*** Level 3
+**** Peerless Hex
+- *Selection*: When you finish a long rest, choose one Hex you know that targets one or more specific creatures (not an area effect or self-buff).
+- *Effect*: You shape this chosen hex as if it were a veil. It occupies one of your available veil slots (counts against your Maximum Veils Shaped) but does not correspond to a body slot.
+- *Essence Investment*: You can invest essence into this Peerless Hex. For every 2 essence points invested, the **save DC** of the Peerless Hex increases by 1.
+
+**** Subclass Selection
+Choose a subclass that defines your connection to rulership and power: Grail King, May King, or Warden King.
+
+**** Hex (Royal Coven)
+You learn the **Royal Coven** hex automatically.
+
+*** Level 4
+**** Ability Score Improvement
+Increase one ability score by 2, or two by 1.
+
+**** Hexes
+You learn the **Malefic Sanction** hex automatically and choose **one** hex from the Basic Hex Choices list.
+
+**** Chakra Bind (Feet)
+You unlock the Feet chakra.
+
+*** Level 5
+**** Blessed Land Improvement
+- *My People Will Flourish*: Save bonus increases to +2, movement bonus to +3 meters (10 ft).
+- *My Enemies Will Suffer*: Save penalty increases to -2, skill penalties increase to -3.
+
+**** Hex (Will Incarnate)
+You learn the **Will Incarnate** hex automatically.
+
+**** Royal Attendants (Minor Customization 1)
+Choose one Minor Customization option for your attendants from the list below:
+- *Cup Bearers*: Once per long rest, your attendants can collectively produce an effect identical to the *Goodberry* spell.
+- *Grooms*: Your attendants grant you advantage on Wisdom (Animal Handling) checks related to caring for or calming mounts or beasts of burden.
+- *Lamplighters*: Your attendants can cast the *Light* cantrip at will on objects they touch.
+- *Valets*: Your attendants grant you advantage on Dexterity (Sleight of Hand) checks made to conceal small objects on your person.
+- *King's Mouthpiece*: Your attendants can relay verbal messages up to 1 mile away almost instantaneously, speaking with your voice.
+
+*** Level 6
+**** Subclass Feature
+Gain your subclass's 6th-level feature.
+
+**** Chakra Bind (Head)
+You unlock the Head chakra.
+
+*** Level 7
+**** Regal Presence
+- *Benefit*: Choose Deception, Persuasion, or Intimidation when you finish a long rest. You gain an insight bonus equal to half your Fisherking level (rounded down) to checks made with that skill.
+- *Essence Investment*: Each point of essence invested into Regal Presence (counts as a veil for investment limits) increases this insight bonus by +1.
+- *Telempathic Projection*: 3 times per day, you can use your action to target one creature you can see within 18 meters (60 ft) with a mental command, replicating the effect of the *Command* spell (WIS save vs your Hex DC). Activating this feature causes **Essence Burn 1** (your maximum essence pool is reduced by 1 until your next long rest).
+  - *Designer Note:* Essence Burn is costly. If too punitive, consider changing the cost to 'expend 2 Essence points' per use, or limiting it to 'Proficiency Bonus uses per Long Rest' with no essence cost.
+
+**** Peerless Hex Binding
+Starting at 7th level, when you bind your Peerless Hex to an unlocked chakra (Hands, Feet, or Head at this level), choose one of the following benefits for that hex:
+- *Increased Potency*: Targets have disadvantage on the first saving throw they make against this hex each time it affects them.
+- *Persistent Hex*: If the hex requires Concentration, you can maintain concentration on it for up to 1 minute without using your own Concentration slot. You can only have one hex maintained this way at a time.
+- *Extended Reach*: If the hex has a range measured in feet/meters, its range is doubled.
+
+*** Level 8
+**** Ability Score Improvement
+Increase one score by 2, or two by 1.
+
+**** Hexes
+Choose **two** hexes from the Basic Hex Choices list.
+
+**** Chakra Bind (Wrists)
+You unlock the Wrists chakra.
+
+*** Level 9
+**** Blessed Land (18m Radius)
+The radius of your Blessed Land aura increases to 18 meters (60 ft).
+
+**** Voice Binding
+You unlock the ability to bind veils to the unique Voice chakra slot.
+
+*** Level 10
+**** Subclass Feature
+Gain your subclass's 10th-level feature.
+
+**** Chakra Bind (Shoulders)
+You unlock the Shoulders chakra.
+
+*** Level 11
+**** Royal Attendants (Heroes' Feast)
+Your Royal Attendants can perform a ritual over 1 hour to create the effects of a **Heroes' Feast** spell once per long rest.
+
+*** Level 12
+**** Ability Score Improvement
+Increase one score by 2, or two by 1.
+
+**** Hex (Major Choice)
+Choose **one** hex from the Major Hex Choices list.
+
+**** Chakra Bind (Headband)
+You unlock the Headband chakra.
+
+*** Level 13
+**** Blessed Land Improvement
+- *My People Will Flourish*: Save bonus increases to +3, movement bonus to +4.5 meters (15 ft).
+- *My Enemies Will Suffer*: Save penalty increases to -3, skill penalties increase to -4.
+
+*** Level 14
+**** Subclass Feature
+Gain your subclass's 14th-level feature.
+
+**** Chakra Bind (Neck)
+You unlock the Neck chakra.
+
+*** Level 15
+**** Twin Voice
+You can now shape and bind up to two different veils to the Voice slot simultaneously. Both are active, draw from your essence pool independently, and benefit from Voice Binding if you bind them.
+
+**** Royal Attendants (Minor Customization 2)
+Choose a second Minor Customization option for your attendants from the list at level 5 (must be different from the first).
+- *Designer Note:* For a simpler implementation, the Minor Customization choices at levels 5 and 15 can be omitted, with Attendants only gaining the base abilities and the Heroes' Feast feature.
+
+*** Level 16
+**** Ability Score Improvement
+Increase one score by 2, or two by 1.
+
+**** Hexes
+Choose **two** hexes from the Basic Hex Choices list.
+
+**** Chakra Bind (Belt)
+You unlock the Belt chakra.
+
+*** Level 17
+**** Blessed Land (27m Radius)
+The radius of your Blessed Land aura increases to 27 meters (90 ft).
+
+*** Level 18
+**** Chakra Bind (Chest)
+You unlock the Chest chakra.
+
+*** Level 19
+**** Ability Score Improvement
+Increase one score by 2, or two by 1.
+
+*** Level 20
+**** Hex (Grand Choice)
+Choose **one** hex from the Grand Hex Choices list.
+
+**** Chakra Bind (Body)
+You unlock the Body chakra.
+
+** SUBCLASSES
+
+*** Grail King
+*The classic Fisherking, embodying the wounded ruler whose restoration heals the land*
+
+**** Level 3: Perfect Peerless
+You are considered 1 level higher for the purpose of qualifying for the Peerless Hex Binding feature (you gain its benefits at level 6 instead of 7).
+
+**** Level 6: Subtle Investment
+When you invest essence into a veil, the first point of essence provides the benefit normally gained from investing two points (if applicable, such as +1 DC per 2 essence on Peerless Hex, or save bonus increases on Blessed Land).
+
+**** Level 10: Essence Recovery
+When you finish a short rest, you regain expended essence points equal to your **Proficiency Bonus**.
+
+**** Level 14: Royal Rebirth
+When you are reduced to 0 hit points but not killed outright, you can use your reaction to expend **5 essence points** to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest.
+
+*** May King
+*A Fisherking connected to nature, whose rule coincides with the cycle of seasons*
+
+**** Level 3: Natural Authority & Leshy Familiar
+Your Royal Attendants feature is replaced. You gain the service of a Leshy Familiar. Use the statistics for a **Sprite** or **Imp** (choose one permanently), with the following changes: It is a Plant instead of Fey/Fiend, it understands Sylvan but cannot speak, and it gains the ability to communicate telepathically with you if it is within 100 feet. It acts on its own initiative. If it dies, you can perform a 1-hour ritual during a long rest to revive it by expending 2 essence points.
+
+**** Level 3: Verdant Veil
+When you shape your veils, you can designate one shaped veil as your Verdant Veil. Investing at least 1 point of essence into this veil allows you to cast the *Druidcraft* cantrip at will. Additionally, once per long rest, you can touch a patch of mundane ground up to 10 feet square while essence is invested; over the next minute, the ground becomes fertile and sprouts temporary, beautiful flora, functioning as the enrichment effect of the *Plant Growth* spell.
+
+**** Level 6: Seasonal Court
+Your Blessed Land aura takes on additional properties based on a chosen season (select during long rest):
+- *Spring*: Allies (including you) in the aura regain **1d4 hit points** at the start of their turn if they have at least 1 hit point but fewer than half their maximum hit points.
+- *Summer*: Allies (including you) in the aura gain a **+1 bonus to attack rolls**.
+- *Autumn*: Allies (including you) in the aura can add **1d4** to one ability check or saving throw they make each round (their choice after rolling but before knowing the outcome).
+- *Winter*: Allies (including you) in theaura gain **Temporary Hit Points** equal to your Charisma modifier (minimum 1) at the start of their turn. These temp HP last until the start of their next turn or until depleted.
+
+**** Level 10: Nature's Voice
+You gain the ability to cast *Speak with Animals* and *Speak with Plants* at will, without requiring material components. Beasts and Plants typically regard you with indifference or curiosity rather than hostility, unless you or your allies act aggressively towards them.
+
+**** Level 14: Wild Transformation
+Once per Short Rest, you can use a **Bonus Action** to magically transform into a nature-infused guardian form for **10 rounds**. While transformed, you gain the following benefits:
+    - Your size becomes Large, unless you were larger.
+    - Your AC becomes **13 + your Dexterity modifier**, unless your normal AC was higher.
+    - You gain **Resistance to bludgeoning and piercing damage from non-magical attacks**.
+    - You gain **Temporary Hit Points equal to your Fisherking level**. These disappear when the transformation ends.
+    - You can use your **Action** to make a **Slam attack**. This is a melee weapon attack using your Charisma modifier for the attack and damage rolls. It has a reach of 3 meters (10 ft) and deals **2d8 + Charisma modifier bludgeoning damage**.
+    - As a **Bonus Action**, you can take root. Your speed becomes 0, you have **advantage on Strength saving throws and Strength checks**, and your Slam attack deals an extra **1d8 bludgeoning damage**. You can use a Bonus Action to uproot.
+The transformation ends early if you are knocked unconscious or dismiss it as a Bonus Action.
+
+*** Warden King
+*A Fisherking who rules through containment and control rather than inspiration*
+
+**** Level 3: Containment Field
+Your Blessed Land feature is replaced with Containment Field.
+- *Activation*: As a **Bonus Action**, activate/deactivate. **9-meter (30 ft)** radius.
+- *Effect*: Hostile creatures treat the area within the field as **difficult terrain**. Ranged attacks targeting creatures inside the field, or originating from inside targeting creatures outside, are made with **disadvantage**.
+- *Essence Investment*:
+  - Each point increases radius by 1.5 meters (5 ft).
+  - Every 2 points imposes an additional **-1.5 meters (-5 ft)** penalty to the speed of hostile creatures within the field.
+
+**** Level 6: Secure
+- You can cast the **Alarm** spell as a ritual without requiring material components.
+- Any lock you touch becomes magically secured. Creatures attempting to pick the lock have **disadvantage** on their Dexterity (Thieves' Tools) check.
+- *Essence Investment*: You can invest essence into this feature (counts as a veil). The DC to pick the lock increases by **2 + the square root of the essence invested (rounded down)**.
+
+**** Level 10: Warden's Signet
+As an **Action**, you can target one creature you can see within 9 meters (30 ft). The target must succeed on a **Wisdom saving throw** (vs your Hex DC) or be magically **Restrained** for up to 1 minute (**Concentration**). The target can repeat the saving throw at the end of each of its turns, ending the effect on a success.
+*Uses*: You can use this feature a number of times equal to your Charisma modifier (minimum once) per long rest.
+
+**** Level 14: Nothing Can Escape
+Entities attempting to leave your active Containment Field aura must make a **Dexterity saving throw** (vs your Veil Save DC). On a failure, their speed becomes 0 until the start of their next turn as bands of force momentarily hold them in place.
+
+** VEILS BY SLOT (MVP LIST)
+
+*** Hands Slot Veils
+**** Loyal Paladin's Spear of Light
+- *Base Effect*: As a Bonus Action, shape a shortspear of light (simple melee, proficient). Deals **1d6 radiant**, Light, Thrown (6m/18m), ignores resistance. Damage -> **1d8** vs Fiends/Undead, **1d4** vs Celestials.
+- *Essence*: +1 atk/dmg per point (max = PB). Reach +1.5m per 2 points.
+- *Bind (Hands)*: Action: Hurl as light bolt (target point within 18m). Line (9m long, 1.5m wide) radiates from point. DEX save vs spear damage (incl. bonus dice). Spear reappears. *Bind Essence*: Add +1d6 radiant damage to line per 2 essence.
+**** Wrathful Claws
+- *Base Effect*: Gain two claws (natural weapons). Use Action to make two claw attacks. Each deals **1d6 slashing**. Use STR or DEX for atk/dmg.
+- *Essence*: +1 atk/dmg per point (max = PB).
+- *Bind (Hands)*: Claw damage die -> 1d8. On a critical hit, target must succeed on CON save or suffer a lingering wound (1d4 necrotic damage start of their next turn).
+**** Plaguebringer Gauntlets
+- *Base Effect*: When taking Attack action, use **Bonus Action** for melee spell attack (reach 1.5m). Hit: **1d4 necrotic**. Can heal Undead 1d4 instead.
+- *Essence*: +1d4 damage/healing per point.
+- *Bind (Hands)*: Hit creature makes CON save or is **Poisoned** for 10 rounds (save ends).
+
+*** Feet Slot Veils
+**** Coward's Boots
+- *Base Effect*: Walking speed increases by +1.5 meters (5 ft).
+- *Essence*: +1.5m speed per point.
+- *Bind (Feet)*: You can take the **Disengage** action as a Bonus Action.
+**** Lavawalker's Boots
+- *Base Effect*: Ignore difficult terrain created by liquids (water, mud, acid pools, lava). Walk across liquid surfaces as if solid.
+- *Essence*: Gain **Acid Resistance** and **Fire Resistance** equal to **5 * essence invested**.
+- *Bind (Feet)*: You hover slightly. Ignore ground-based difficult terrain and pressure plates/traps triggered by weight. Can move over pits/chasms up to your movement speed, falling if ending turn mid-air.
+**** Stalker's Tabi
+- *Base Effect*: +1.5m (5 ft) movement speed. Advantage on Dexterity (Stealth) checks to move silently.
+- *Essence*: +1.5m speed per point.
+- *Bind (Feet)*: While in dim light or darkness, use **Bonus Action** to teleport up to 9m (30 ft) + 3m (10 ft) per 2 essence invested, to unoccupied space also in dim light/darkness.
+
+*** Head Slot Veils
+**** Horns of the Minotaur
+- *Base Effect*: Gain gore attack (natural weapon). Use Action: Make one gore attack (1d6 piercing, STR or DEX). If moved >= 3m straight towards target before hit, add +1d6 damage & target makes STR save or is pushed 3m back.
+- *Essence*: +1 damage per point.
+- *Bind (Head)*: Gore damage die -> 1d8. Advantage on Wisdom (Perception) checks relying on smell & STR saves vs being pushed/knocked prone.
+**** Sentinel's Helm
+- *Base Effect*: +2 bonus to initiative rolls. Advantage on Wisdom (Perception) checks relying on sight or hearing.
+- *Essence*: +1 bonus to initiative per point.
+- *Bind (Head)*: You cannot be surprised while conscious. Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.
+**** Stare of the Ghaele
+- *Base Effect*: As an **Action**, target one creature within 9m (30 ft). Target makes WIS save or is **Frightened** for 10 rounds (**Concentration**). Save ends effect.
+- *Essence*: Every 2 points increases save DC by +1.
+- *Bind (Head)*: Target failing initial save is **Stunned** for 1 round, then Frightened (still concentration, save ends).
+
+*** Wrists Slot Veils
+**** Hand Cannons
+- *Base Effect*: Action: Ranged spell attack (range 9m/30 ft). Hit: **1d10 force**. Scales: 2d10 (L5), 3d10 (L11), 4d10 (L17).
+- *Essence*: +3m (10 ft) range per point. Every 2 points grants +1 additional attack with this veil when using this Action (max +PB/2 attacks).
+- *Bind (Wrists)*: Choose Acid, Cold, Fire, Lightning, Poison, or Thunder. Damage becomes this type. *Bind Essence*: 2+: Add rider effect on hit (Fire: 1d4 burn; Cold: -3m speed; Acid: -1 AC; Lightning: No reactions; Poison: Disadv. next atk; Thunder: Push 1.5m). 4+: Base damage -> d12s.
+**** Tentacles of Abolethic Sovereignty
+- *Base Effect*: Action: Melee spell attack (reach 4.5m/15 ft). Hit: Target makes WIS save or is **Frightened** for 1 minute (**Concentration**). Save ends.
+- *Essence*: +1.5m (5 ft) reach per point. Every 2 points: failing initial save also halves speed while Frightened.
+- *Bind (Wrists)*: Failing initial save means target is **Restrained** instead (still Conc./save ends). Escape: Action STR(Athletics)/DEX(Acrobatics) vs Veil DC.
+**** Lashing Spinnerets
+- *Base Effect*: Bonus Action: Choose 1: Target 1.5m (5 ft) square surface within 9m (30 ft) = difficult terrain (1 min); OR Ranged spell attack vs creature within 9m = speed -3m (10 ft) for 1 min (Action removes).
+- *Essence*: +3m (10 ft) range per point. 2+: Gain climb speed = walk speed. 4+: Surface area -> 3m (10 ft) square; Creature makes STR save on hit or is **Restrained** (escape DC = Veil DC).
+- *Bind (Wrists)*: Cast **Web** (Veil DC) without components (1/SR). +1 use/SR per 2 essence.
+
+*** Shoulders Slot Veils
+**** Gorget of the Wyrm (Shoulders)
+- *Base Effect*: Choose Acid, Cold, Fire, Lightning, Poison. Action: Exhale 4.5m (15 ft) cone. DEX save half. 2d6 dmg (chosen type). Scales: 3d6(L5), 4d6(L11), 5d6(L17). Use 1/SR.
+- *Essence*: +1d6 damage per point. +1 use/SR per 2 points.
+- *Bind (Shoulders)*: Fly speed 9m (30 ft). +1.5m (5 ft) fly speed per essence.
+**** Spiked Pauldrons
+- *Base Effect*: Advantage on checks vs Grapple. Creature grappling you/hitting with natural/unarmed takes 1d6 piercing.
+- *Essence*: +1d6 piercing damage per point. 2+: Damaged creature has disadv. on next attack roll.
+- *Bind (Shoulders)*: Action: Spike burst (3m/10 ft radius). DEX save vs veil damage (half on success). Use 1/SR.
+**** Mantle of Murderous Intent
+- *Base Effect*: Action: 4.5m (15 ft) cone. WIS save half. 2d6 psychic dmg. Scales: 3d6(L5), 4d6(L11), 5d6(L17).
+- *Essence*: +1d6 damage per point. +1.5m (5 ft) cone size per 2 points.
+- *Bind (Shoulders)*: Failed save also **Frightened** for 1 round.
+
+*** Headband Slot Veils
+**** Eye of the Oracle
+- *Base Effect*: Pool of Oracle Dice (d4s) = PB. Reaction: Expend die, add to atk/ability/save roll for self/ally within 9m (30 ft) (after roll, before outcome). Regain dice on LR.
+- *Essence*: Die size increases per essence (1:d4 -> 2:d6 -> 3:d8 -> 4:d10 -> 5+:d12).
+- *Bind (Headband)*: Constant *Detect Magic*. Cast *Identify* as ritual without material components.
+**** Dreamcatcher
+- *Base Effect*: Choose 2 INT skills (Arcana, History, Investigate, Nature, Religion). Gain Proficiency (or Expertise if already proficient).
+- *Essence*: +1 INT skill choice per point.
+- *Bind (Headband)*: Cast *Detect Thoughts* at will (target WIS save vs Veil DC). Requires **Concentration**.
+**** Circlet of Brass
+- *Base Effect*: Fire damage veil/spell: treat rolled 1s as 2s.
+- *Essence*: 1-2: Reroll 1s/2s on fire dmg dice. 3-4: Target succeeding vs your fire veil/spell takes half dmg (if normally none). 5+: Target has disadv. on save vs your fire veil/spell.
+- *Bind (Headband)*: Action: Ranged spell attack (range 18m/60 ft) fire bolt. Hit: 1d10 fire. Scales: 2d10(L5), 3d10(L11), 4d10(L17). Base effects apply.
+
+*** Neck Slot Veils
+**** Collar of Skilled Instruction
+- *Base Effect*: Bonus Action: Use **Help** action (range 9m/30 ft, target needs hear/see).
+- *Essence*: +1 target ally per point (same task/enemy).
+- *Bind (Neck)*: Choose Fighting Style (Defense, Interception, Protection). Allies within 3m (10 ft) gain benefit while you are conscious.
+**** Bralani's Brooch
+- *Base Effect*: Resistance to **Lightning** damage.
+- *Essence*: Per 2 points: Choose Acid, Cold, Fire, Poison, or Thunder. Gain Resistance to that type too.
+- *Bind (Neck)*: Advantage on saving throws against spells and other magical effects.
+**** Gorget of the Wyrm (Neck)
+- *Base Effect*: Choose Acid, Cold, Fire, Lightning, Poison. Action: Exhale 4.5m (15 ft) cone. DEX save half. 2d6 dmg (chosen type). Scales: 3d6(L5), 4d6(L11), 5d6(L17). Use 1/SR.
+- *Essence*: +1d6 damage per point. +1 use/SR per 2 points.
+- *Bind (Neck)*: Breath weapon damage dice -> d8s. When using breath weapon, allies within 3m (10 ft) gain Temp HP = 2 * essence invested.
+
+*** Belt Slot Veils
+**** Stone Giant's Girdle
+- *Base Effect*: Gain Temp HP = 2 * Level after SR or LR.
+- *Essence*: +5 additional Temp HP per point.
+- *Bind (Belt)*: *Rock Catching*: Reaction vs ranged weapon/thrown atk hit: reduce damage by 1d10 + DEX mod + Level. Reduce to 0 = catch if possible. *Rock Throwing*: Action: Ranged weapon attack (STR, range 18m/54m). Hit: 2d8 + STR mod bludgeoning. Rock vanishes.
+**** Cerebral Catastrophe Cinch
+- *Base Effect*: Reaction vs creature casting spell within 18m (60 ft): Force WIS save. Fail: Disadv. on first atk/save roll from their spell.
+- *Essence*: -1d4 penalty instead of Disadv. per point.
+- *Bind (Belt)*: Creature failing save vs base effect is also **Dazed** until end of its next turn.
+**** Waistband of the Wealthy
+- *Base Effect*: Choose 2 skills (Deception, Insight, Investigate, Persuasion). Gain Proficiency (or Expertise).
+- *Essence*: Per 2 points: Choose +1 skill from list for prof/expertise.
+- *Bind (Belt)*: Functions as *Bag of Holding* (Type I capacity).
+
+*** Chest Slot Veils
+**** Cuirass of Confidence
+- *Base Effect*: Advantage on Charisma (Persuasion) and (Deception) checks.
+- *Essence*: +1 bonus to these checks per point (max = PB).
+- *Bind (Chest)*: Reaction vs attack roll targeting you: Impose Disadvantage. Uses = CHA mod (min 1) per LR.
+**** Heart of the Wight
+- *Base Effect*: Advantage on saves vs Diseased, Frightened, Paralyzed, Poisoned, Stunned.
+- *Essence*: 1+: Resistance to Necrotic dmg. 3+: Resistance to Poison dmg.
+- *Bind (Chest)*: Immune to ability score/HP max reduction. Necrotic heals you, Radiant harms if normally heals. Advantage on saves vs Turn Undead effects.
+**** Vestments of the Maharaja
+- *Base Effect*: Choose Persuasion or Intimidation. Gain Expertise.
+- *Essence*: 1-2: Gain Expertise in the other. 3+: Creatures have disadv. on Insight checks vs your Persuasion/Intimidation.
+- *Bind (Chest)*: Cast *Dominate Person* (humanoid, Conc, WIS save vs Veil DC). Use 1/LR. +1 DC per 2 essence. 6+ essence: Functions as *Dominate Monster* (any creature type).
+
+*** Body Slot Veils
+**** Aerial Nimbus
+- *Base Effect*: Hover speed 3m (10 ft) (must end on solid surface).
+- *Essence*: +1.5m (5 ft) hover speed per point. 3+: Full fly speed (3m + 1.5m/pt), no landing needed.
+- *Bind (Body)*: Constant fly speed = walk speed. +1.5m (5 ft) fly speed per essence point invested.
+**** Robe of the Forgotten Deity
+- *Base Effect*: While in dim light/darkness, attacks vs you have Disadvantage.
+- *Essence*: 2+: Effect works in bright light too. 4+: Also gain +1 AC & DEX saves.
+- *Bind (Body)*: Bonus Action: Gain *Gaseous Form* effect for 1 round. Use 1/SR. +1 use/SR per 2 essence.
+**** Bloody Shroud
+- *Base Effect*: 1.5m (5 ft) radius aura. Creature in aura hitting you with melee pierce/slash makes CON save or takes 1d4 necrotic start of its next turn.
+- *Essence*: +1.5m radius/essence, +1d4 necrotic damage/essence.
+- *Bind (Body)*: When hit with melee weapon attack, expend **2 essence**. Target makes CON save or suffers **one level of Exhaustion**. When reduce hostile creature to 0 HP with melee attack, regain HP = Level.
+
+*** Voice Slot Veils
+**** Declaration of War
+- *Base Effect*: Bonus Action: Designate enemy within 18m (60 ft). Until start of your next turn, first attack roll vs target by you/ally within 9m (30 ft) has Advantage.
+- *Essence*: 1-2: *All* attack rolls vs target by you/allies within 9m have Adv. until start of next turn. 3+: Effect lasts 1 minute (**Concentration**), granting Adv. on first attack roll each turn.
+- *Bind (Voice)*: Cast *Summon Beast* (Wolf stats) as 2nd level spell (Conc, 1 min) without components. +1 spell level per 2 essence. Use 1/LR.
+**** Diplomatic Overture
+- *Base Effect*: Advantage on Charisma (Persuasion) and Wisdom (Insight) checks.
+- *Essence*: 1+: Adv on Cha (Deception). 3+: Adv on Cha (Intimidation).
+- *Bind (Voice)*: Gain *Sanctuary* effect (WIS save vs Veil DC). Non-concentration, lasts until you attack/harm/cast vs enemy. Use 1/LR. +1 use/LR per 2 essence.
+**** Annexation
+- *Base Effect*: Action: Target creature within 9m (30 ft). CHA save or pushed 3m (10 ft) away.
+- *Essence*: +1.5m (5 ft) push distance per point.
+- *Bind (Voice)*: Failed save also knocked **Prone**. 4+ essence: Target *all* creatures of choice in 3m (10 ft) radius (point within 9m) - separate saves.
+**** Divine Mandate
+- *Base Effect*: Adv on Cha (Intimidation). Cast *Command* (1st level, WIS save vs Veil DC) at will (1/target/hour).
+- *Essence*: Per 2 essence: Cast *Command* as +1 spell level (max 5th).
+- *Bind (Voice)*: Creature failing save vs your Command via this veil is also **Frightened** of you for 1 minute (save ends).
+**** Invigorating Oration
+- *Base Effect*: Action: Allies within 9m (30 ft) regain 1d4 HP. Dying creatures stabilize.
+- *Essence*: +1d4 healing per point. +3m (10 ft) range per 2 points.
+- *Bind (Voice)*: Reaction when ally within 9m drops to 0 HP: Ally makes DC 10 CON save. Success = drop to 1 HP instead. Uses = PB per LR.
+**** Interdiction
+- *Base Effect*: Bonus Action: Choose Atk Rolls, Saves, or Ability Checks. Until start of next turn, enemy within 9m (30 ft) attempting action vs you/ally needing that roll makes WIS save. Fail = Disadvantage.
+- *Essence*: -1d4 penalty instead of Disadv. per point.
+- *Bind (Voice)*: Enemy failing save vs base effect takes 1d6 psychic dmg + 1d6 per essence invested. Requires **Concentration** for damage trigger.
+**** Rebuke
+- *Base Effect*: Action: Target creature within 9m (30 ft). WIS save half. 1d8 + CHA mod psychic dmg. Scales: 2d8(L5), 3d8(L11), 4d8(L17).
+- *Essence*: +1d8 damage per 2 points.
+- *Bind (Voice)*: Target +1 creature/range per 2 essence. Failed save also **Frightened** for 1 round.
+**** Royal Patent
+- *Base Effect*: Bonus Action: Touch willing creature (can be self). Grant 'title' for 1 hour. Choose one skill; target has Advantage on checks with that skill. Only one title active.
+- *Essence*: Per 2 points: Have +1 additional title active simultaneously (different targets).
+- *Bind (Voice)*: Titled creatures gain +1 AC. 4+ essence: Also gain +1 to all Saving Throws.
+**** Stay of Execution
+- *Base Effect*: Choose another damaging veil you shape. Its damage becomes nonlethal.
+- *Essence*: Creatures unconscious via affected veil auto-stabilize. 2+: Also gain Temp HP = essence invested when knocked unconscious.
+- *Bind (Voice)*: Cast *Spare the Dying* cantrip as Bonus Action. Advantage on Wisdom (Medicine) checks.
+
+** MULTICLASS CONSIDERATIONS
+- *Proficiencies Gained*: None if multiclassing *into* Fisherking. If multiclassing *out*, standard rules apply.
+- *Veilweaving*: Maximum Veils Shaped, Essence Pool, Chakra Unlocks, and Hex progression depend only on your Fisherking level. The Maximum Essence Per Veil depends on total character level via the defined progression table.
+
+** HEXES
+
+*** Hex Mechanics
+- *Casting Time*: Typically 1 Action or Bonus Action as specified.
+- *Range*: As specified (often Touch, 9m, or 18m).
+- *Components*: Hexes generally do not require Verbal, Somatic, or Material components unless specified.
+- *Duration*: Varies; many require Concentration (indicated).
+- *Saving Throws*: Use your **Hex Save DC = 8 + Proficiency Bonus + Charisma Modifier**.
+- *Uses/Recovery*: Varies per hex. Categories include:
+    - *At-Will*: Can be used without limit.
+    - *1/Target/Rest*: Can affect a specific creature only once per Short or Long Rest.
+    - *(Combat Recovery)*: Regain one use when rolling initiative (max 1/combat).
+    - *X / Short Rest (SR)*: Regain uses after a short or long rest.
+    - *X / Long Rest (LR)*: Regain uses after a long rest (often CHA Mod times or PB times).
+    - *Concentration*: Requires maintaining concentration like a spell.
+
+*** Automatic Fisherking Hexes
+*Learned at the levels indicated in the Class Features table.*
+**** King's Cup (L2)
+- Proficiency with Herbalism Kit. During LR, spend 10 min + 1 Essence: Brew potion (Potion of Minor Healing, Climbing Potion, Antitoxin, or Potion of Resistance [choose type]). Create up to PB potions/LR (each costs 1 essence). Lose potency after 24 hours.
+- *Potion of Minor Healing*: Restores **1d4+CHA** HP. Scales: **2d4+CHA**(L5), **3d4+CHA**(L11), **4d4+CHA**(L17).
+- *Action*: Consuming potion = **Bonus Action**.
+**** Royal Coven (L3)
+- Passive: If within 9m of allied Fisherking/Witch with Coven hex: +1 Hex Save DC for both. Treat Max Essence/Veil cap as +1 higher for investment.
+**** Malefic Sanction (L4)
+- Bonus Action after hitting with weapon attack: Deliver single-target Action-cast Hex you know (target must be in hex range). Uses = CHA Mod/LR.
+**** Will Incarnate (L5)
+- Your Royal Attendants / Leshy Familiar can deliver touch hexes for you (use their reaction after you cast). Use your spell attack mod if needed.
+
+*** Basic Hex Choices Pool
+*Choose from this list for your 6 Basic Hex selections (L2, L4, L8x2, L16x2)*
+**** Evil Eye
+- Action, range 9m. Target WIS save or suffer effect for 10 rounds (Conc): Disadv on Atk Rolls, Ability Checks, Saves, OR -2 penalty to AC. Save success = immune 24h. Recovery: At-Will.
+**** Fortune
+- Bonus Action, range 9m. Willing target gets Advantage on next atk/ability/save roll before start of your next turn. Recovery: 1/Target/SR. `(Combat Recovery)`.
+**** Flight, Minor
+- Passive: Constant *Feather Fall*. Action: Fly speed 9m/round for 10 rounds. Safe descent if ends mid-air. Recovery: Action use is 1/SR.
+**** Healing Word, Fisherking's
+- Bonus Action, range 18m. Target regains 1d4 + CHA mod HP. No effect undead/constructs. Recovery: PB uses/LR.
+**** Misfortune
+- Action, range 9m. Target WIS save. Fail: Next atk/ability/save before end of its next turn has Disadvantage. Recovery: At-Will (but cannot target same creature again until start of your next turn).
+**** Slumber, Light
+- Action, range 9m. Target WIS save or unconscious up to 10 rounds (Conc). Ends on dmg/woken. No effect immune-to-charm/construct/undead. Recovery: 1/SR.
+**** Ward of the Fisherking
+- Action, touch willing target. +1 AC & Saves for 1 hour. Ends if used again. Only one active ward. Recovery: At-Will (1 active).
+
+*** Major Hex Choices (Choose One at Level 12)
+**** Castle of the Fisherking
+- 10 min cast, cost 5 Essence. Conjure extradimensional manor/keep (fits 2*Level creatures). Entrance within 9m. Lasts 24h or dismissed (action). Furnished, food/water, secure, hidden divination. Entry by permission. Recovery: 1/LR.
+**** Builder of Roads
+- Action, touch willing target (self ok). Target + 5 allies within 9m travel rapidly (like *Phantom Steed*, 15 kph, 8 hrs, non-conc, ignores difficult terrain). Ends if initial target dismisses (action). Recovery: 1/LR.
+**** Call to Court
+- Action, target known willing ally (same plane). Target can instantly teleport to space within 9m of you. Knows caller/direction if declined. Recovery: CHA Mod uses/LR.
+
+*** Grand Hex Choices (Choose One at Level 20)
+**** Legacy of the Land (BG3 Focused)
+- Trigger: Upon death, if within active Blessed Land aura. Effect: Immediately, PB Earth Elementals arise within 100m. Allied, act on own initiative. AI: Attack nearest hostile, prioritizing those attacking allies; Dodge if no hostiles. Last 10 rounds or until destroyed. Does not impede resurrection. Recovery: Activates on death.
+**** Divine Mien
+- Action, range 18m radius. Hostiles of choice (see/hear you) make WIS save or Charmed for 1 hour. Regard you as leader, follow reasonable non-suicidal commands. Ends for target if you/allies harm it. Recovery: 1/LR.
+**** Spiritual Dominion
+- Reaction when creature enters/exits Blessed Land aura without permission: Expend 2 Essence. Target with single-target Hex (cast time 1 Action/Bonus Action) you know (must be in hex range). Use 1/round. Recovery: Reaction, limited by essence.
+
+** IMPLEMENTATION NOTES
+
+*** UI DEVELOPMENT
+**** Veil Management Interface
+- Tab in character sheet for "Veils"
+- Organize by body slot
+- Show available slots, shaped veils, bind status
+- Interface for shaping/binding during long rest
+**** Essence Allocation System
+- Resource bar for Essence Pool
+- Slider/input for each shaped veil/feature
+- Visual feedback on power changes
+**** Blessed Land Visualization
+- Modified Paladin aura visual
+- Toggle for Flourish/Suffer effect display?
+- Visual scales with radius
+**** Hex Management
+- Display like Warlock Invocations or Feats
+- Action bar integration where applicable
+- Cooldown/use count visuals
+
+*** TECHNICAL IMPLEMENTATION
+**** Converting Pathfinder to 5E Mechanics
+- Feet/Meters: Use meters primarily for display? Stick to feet for internal calcs? Ensure consistency. (Draft uses meters with ft reminders).
+- Actions: Standard->Action, Swift->Bonus, Immediate->Reaction.
+- Saves: Fort->CON, Reflex->DEX, Will->WIS.
+- Skills: Use 5e equivalents.
+**** Resource Management Systems
+- Track Essence Pool (current/max).
+- Track Max Essence per Veil based on level curve.
+- Track Essence Burn for Regal Presence (temp max reduction).
+- Track Shaped Veils & Invested Essence per veil.
+- Track Hex uses (per rest type, per target).
+- Track Chakra unlocks & Bindings.
+**** Visual Effects
+- Consider minimal unique VFX per veil, focus on bound states or high essence investment glow?
+- Royal Attendants visual (translucent figures).
+
+*** GAMEPLAY BALANCE CONSIDERATIONS
+**** Power Level Adjustments
+- Veil Save DC standard (8+PB+CHA).
+- Hex Save DC standard (8+PB+CHA).
+- Damage scaling benchmarked vs 5e cantrips/spells.
+- Concentration requirements added to powerful ongoing effects.
+- Essence pool size vs. cost of abilities (Regal Presence Burn, Bind costs like Bloody Shroud, Hex costs like Spiritual Dominion). Needs testing.
+- Max Essence per Veil curve interaction with effect scaling.
+**** Action Economy
+- Essence redistribution = Bonus Action.
+- Hex action costs defined.
+- Veil abilities action costs defined.
+**** Interaction with Existing Mechanics
+- Auras need correct interaction with terrain/walls.
+- Ensure Concentration rules are followed strictly.
+
+** PLAYSTYLE GUIDE
+
+*** Core Strategies
+- Adaptive Controller/Support: Shape veils daily for expected challenges. Redistribute essence mid-combat (Bonus Action).
+- Battlefield Management: Use Blessed Land/Containment Field strategically. Position for aura coverage.
+- Debuff/Control: Apply Hexes tactically.
+- Utility: Use veils/hexes for non-combat solutions (skills, movement, social).
+
+*** Positioning and Role
+- Mid-range typically. Some veils/subclasses allow closer range.
+- Party Role: Primary Controller/Support, secondary Buffer/Debuffer, potential Utility/Skill specialist depending on veil/hex choices. Can be party face.
+
+** APPENDIX: POTENTIAL FUTURE VEIL CONVERSIONS
+*(This is a non-exhaustive list of other Vizier veils from Pathfinder that could be adapted later)*
+- Circlet of Persuasion
+- Cincture of the Dragon
+- Daevic Aspect
+- Dark Lord's Wrath
+- Essence of the Succubus
+- Gloves of the Master Strategist
+- Handguards of Assassination
+- Impaling Spike
+- Landshark Boots
+- Lorgnette of the Lie Master
+- Lover's Tread
+- Manacles of the Brute
+- Martyr's Toga
+- Mask of the Forgotten Pharaoh
+- Pendant of Incisive Insight
+- Penitent's Robes
+- Pestilence Cloak
+- Sandals of the Patient Nomad
+- Sea Drake's Girdle
+- Shield Gauntlets
+- Spaulders of the Impenetrable Fortress
+- Stalwart Belt
+- Storm Gauntlets
+- Tunic of Deadly Might
+- Veil of Infernal Countenance
+- Vorpal Guards
+- Weightless Veil
+- Wind-Touched Amulet
+- Winged Circlet
+- Winter's Embrace
+- World-Serpent's Grasp
+- Worn Treads
+- ... (and others from Akashic Mysteries)
