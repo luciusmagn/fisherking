@@ -1,4 +1,10 @@
-* FISHERKING CLASS: COMPLETE IMPLEMENTATION GUIDE (BG3 Adaptation v1.0)
+* FISHERKING CLASS (BG3 Adaptation draft)
+
+- https://www.d20pfsrd.com/classes/3rd-party-classes/d20pfsrd-com-publishing/the-fisherking/
+- https://www.d20pfsrd.com/classes/3rd-party-classes/d20pfsrd-com-publishing/the-fisherking/may-king-fisherking-archetype/
+- https://www.d20pfsrd.com/classes/3rd-party-classes/d20pfsrd-com-publishing/the-fisherking/warden-fisherking-archetype/
+- https://www.d20pfsrd.com/magic/variant-magic-rules/akashic-magic/veilweaving-classes/the-vizier/
+- https://www.d20pfsrd.com/magic/variant-magic-rules/akashic-magic/veils/
 
 ** Base Class Specifications
 - *Hit Die*: d8
@@ -331,7 +337,7 @@ When you are reduced to 0 hit points but not killed outright, you can use your r
 *A Fisherking connected to nature, whose rule coincides with the cycle of seasons*
 
 **** Level 3: Natural Authority & Leshy Familiar
-Your Royal Attendants feature is replaced. You gain the service of a Leshy Familiar. Use the statistics for a **Sprite** or **Imp** (choose one permanently), with the following changes: It is a Plant instead of Fey/Fiend, it understands Sylvan but cannot speak, and it gains the ability to communicate telepathically with you if it is within 100 feet. It acts on its own initiative. If it dies, you can perform a 1-hour ritual during a long rest to revive it by expending 2 essence points.
+Your Royal Attendants feature is replaced. You gain the service of a Leshy Familiar. Use the statistics for a **Sprite** or **Imp** (choose one permanently), or a *wood woad* It acts on its own initiative. If it dies, after a long rest to revive it by expending 2 essence points.
 
 **** Level 3: Verdant Veil
 When you shape your veils, you can designate one shaped veil as your Verdant Veil. Investing at least 1 point of essence into this veil allows you to cast the *Druidcraft* cantrip at will. Additionally, once per long rest, you can touch a patch of mundane ground up to 10 feet square while essence is invested; over the next minute, the ground becomes fertile and sprouts temporary, beautiful flora, functioning as the enrichment effect of the *Plant Growth* spell.
@@ -554,10 +560,6 @@ Entities attempting to leave your active Containment Field aura must make a **De
 - *Base Effect*: Bonus Action: Touch willing creature (can be self). Grant 'title' for 1 hour. Choose one skill; target has Advantage on checks with that skill. Only one title active.
 - *Essence*: Per 2 points: Have +1 additional title active simultaneously (different targets).
 - *Bind (Voice)*: Titled creatures gain +1 AC. 4+ essence: Also gain +1 to all Saving Throws.
-**** Stay of Execution
-- *Base Effect*: Choose another damaging veil you shape. Its damage becomes nonlethal.
-- *Essence*: Creatures unconscious via affected veil auto-stabilize. 2+: Also gain Temp HP = essence invested when knocked unconscious.
-- *Bind (Voice)*: Cast *Spare the Dying* cantrip as Bonus Action. Advantage on Wisdom (Medicine) checks.
 
 ** MULTICLASS CONSIDERATIONS
 - *Proficiencies Gained*: None if multiclassing *into* Fisherking. If multiclassing *out*, standard rules apply.
